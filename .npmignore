@@ -15,4 +15,4 @@ yarn-error.log*
 
 webpack.*.js
 /src/
-./index.js
+/index.js
