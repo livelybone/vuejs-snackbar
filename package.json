@@ -1,0 +1,23 @@
+{
+  "name": "Vue-Snackbar",
+  "version": "1.0.0",
+  "description": "A vuejs snackbar componenty",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livelybone/Vue-Snackbar.git"
+  },
+  "keywords": [
+    "vue",
+    "snackbar"
+  ],
+  "author": "livelybone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/livelybone/Vue-Snackbar/issues"
+  },
+  "homepage": "https://github.com/livelybone/Vue-Snackbar#readme"
+}
