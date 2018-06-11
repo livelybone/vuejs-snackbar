@@ -13,11 +13,11 @@ npm install vuejs-snackbar
 import Snackbar from 'vuejs-snackbar';
 
 // Global register
-Vue.component('snacbar', Snackbar);
+Vue.component('snackbar', Snackbar);
 
 // Local register
 new Vue({
-  component:{Snackbar}
+  components:{Snackbar}
 })
 ```
 
