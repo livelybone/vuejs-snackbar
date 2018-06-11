@@ -1,5 +1,5 @@
 {
-  "name": "Vue-Snackbar",
+  "name": "vuejs-snackbar",
   "version": "1.0.0",
   "description": "A vuejs snackbar componenty",
   "main": "index.js",
