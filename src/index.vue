@@ -10,46 +10,6 @@
 </template>
 
 <script>
-  const colors = {
-    open: '#333',
-    info: '#3DBD7D',
-    error: '#FA7377',
-    warn: '#FF6600'
-  };
-
-  const c = (f, baseSize) => `calc(${f} * ${baseSize})`;
-
-  const style = (baseSize = '100px') => ({
-    wrap: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexWrap: 'wrap',
-      position: 'fixed',
-      left: '50%',
-      top: c('.05', baseSize),
-      zIndex: 1000,
-      width: 0,
-    },
-    bar: bg => ({
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: 'auto',
-      minWidth: baseSize,
-      maxWidth: `calc(100vw - .4 * ${baseSize})`,
-      minHeight: c(.5, baseSize),
-      padding: `${c(.1, baseSize)} ${c(.2, baseSize)}`,
-      margin: `0 0 ${c(.05, baseSize)}`,
-      borderRadius: c(.02, baseSize),
-      lineHeight: c(.2, baseSize),
-      color: '#fff',
-      background: bg,
-      boxShadow: `0 ${c(.01, baseSize)} ${c(.025, baseSize)} rgba(0,0,0, .15)`,
-      cursor: 'pointer',
-    })
-  });
-
   export default {
     name: 'SnackBar',
     mounted() {
@@ -57,7 +17,12 @@
     props: {
       colors: {
         default() {
-          return colors
+          return {
+            open: '#333',
+            info: '#3DBD7D',
+            error: '#FA7377',
+            warn: '#FF6600'
+          }
         },
         type: Object
       },
@@ -84,21 +49,21 @@
     },
     computed: {
       style() {
-        return style(this.baseSize)
+        return this.getStyle(this.baseSize)
       }
     },
     methods: {
       info(msg) {
-        this.color = this.colors.info || colors.info;
+        this.color = this.colors.info;
         this.open({color: this.color, msg: msg})
       },
       error(msg) {
-        this.color = this.colors.error || colors.error;
+        this.color = this.colors.error;
         this.open({color: this.color, msg: msg});
         return false;
       },
       warn(msg) {
-        this.color = this.colors.warn || colors.warn;
+        this.color = this.colors.warn;
         this.open({color: this.color, msg: msg});
       },
       open(msg) {
@@ -112,6 +77,41 @@
       getMsg(msg) {
         if (typeof msg === 'string') return msg;
         if (msg.message) return msg.name + ': ' + msg.message
+      },
+      getStyle(baseSize = '100px') {
+        return {
+          wrap: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            position: 'fixed',
+            left: '50%',
+            top: this.c('.05', baseSize),
+            zIndex: 1000,
+            width: 0,
+          },
+          bar: bg => ({
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 'auto',
+            minWidth: baseSize,
+            maxWidth: `calc(100vw - .4 * ${baseSize})`,
+            minHeight: this.c(.5, baseSize),
+            padding: `${this.c(.1, baseSize)} ${this.c(.2, baseSize)}`,
+            margin: `0 0 ${this.c(.05, baseSize)}`,
+            borderRadius: this.c(.02, baseSize),
+            lineHeight: this.c(.2, baseSize),
+            color: '#fff',
+            background: bg,
+            boxShadow: `0 ${this.c(.01, baseSize)} ${this.c(.025, baseSize)} rgba(0,0,0, .15)`,
+            cursor: 'pointer',
+          })
+        }
+      },
+      c(f, baseSize){
+         return `calc(${f} * ${baseSize})`
       }
     }
   }

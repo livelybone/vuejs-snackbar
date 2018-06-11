@@ -1,10 +1,11 @@
 {
   "name": "vuejs-snackbar",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A vuejs snackbar componenty",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack  --progress --mode production"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/livelybone/Vue-Snackbar/issues"
   },
-  "homepage": "https://github.com/livelybone/Vue-Snackbar#readme"
+  "homepage": "https://github.com/livelybone/Vue-Snackbar#readme",
+  "devDependencies": {
+    "vue-loader": "^15.2.4",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.12.0",
+    "webpack-command": "^0.2.1"
+  }
 }
