@@ -1,8 +1,8 @@
 <template>
-    <div class="snack-bar-wrap">
+    <div :class="wrapClass" :style="wrapClass?'':style.wrap">
         <div v-for="(msg,i) in msgs"
              class="snack-bar"
-             :style="{background:msg.color}"
+             :style="wrapClass?'':style.bar(msg.color)"
              @click="pop"
              v-html="getMsg(msg.msg)">
         </div>
@@ -16,6 +16,39 @@
     error: '#FA7377',
     warn: '#FF6600'
   };
+
+  const c = (f, baseSize) => `calc(${f} * ${baseSize})`;
+
+  const style = (baseSize = '100px') => ({
+    wrap: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+      position: 'fixed',
+      left: '50%',
+      top: c('.05', baseSize),
+      zIndex: 1000,
+      width: 0,
+    },
+    bar: bg => ({
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 'auto',
+      minWidth: baseSize,
+      maxWidth: `calc(100vw - .4 * ${baseSize})`,
+      minHeight: c(.5, baseSize),
+      padding: `${c(.1, baseSize)} ${c(.2, baseSize)}`,
+      margin: `0 0 ${c(.05, baseSize)}`,
+      borderRadius: c(.02, baseSize),
+      lineHeight: c(.2, baseSize),
+      color: '#fff',
+      background: bg,
+      boxShadow: `0 ${c(.01, baseSize)} ${c(.025, baseSize)} rgba(0,0,0, .15)`,
+      cursor: 'pointer',
+    })
+  });
 
   export default {
     name: 'SnackBar',
@@ -32,16 +65,26 @@
         default: 3000,
         type: Number
       },
-      barStyle: Object,
       multiple: {
         default: true,
         type: Boolean
-      }
+      },
+      wrapClass: String,
+      baseSize: {
+        validator(val) {
+          return val === undefined || typeof val === 'string' && /\d(rem|px|em)$/.test(val)
+        }
+      },
     },
     data() {
       return {
         msgs: [],
         color: ''
+      }
+    },
+    computed: {
+      style() {
+        return style(this.baseSize)
       }
     },
     methods: {
@@ -73,35 +116,3 @@
     }
   }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang='scss' scoped>
-    .snack-bar-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        position: fixed;
-        left: 50%;
-        top: .05rem;
-        z-index: 1000;
-        width: 0;
-
-        & .snack-bar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: auto;
-            min-width: 1rem;
-            max-width: calc(100vw - .4rem);
-            min-height: .5rem;
-            padding: .1rem .2rem;
-            margin: 0 0 .05rem;
-            border-radius: .02rem;
-            line-height: .2rem;
-            color: #fff;
-            box-shadow: 0 .01rem .025rem rgba(#000, .15);
-            cursor: pointer;
-        }
-    }
-</style>
