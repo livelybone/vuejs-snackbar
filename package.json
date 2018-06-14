@@ -1,6 +1,6 @@
 {
   "name": "vuejs-snackbar",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A vuejs snackbar componenty",
   "main": "./build/index.js",
   "scripts": {
