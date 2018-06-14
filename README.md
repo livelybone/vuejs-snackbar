@@ -2,14 +2,13 @@
 A Vuejs snackbar component. Used flex layout. Repository: https://github.com/livelybone/Vue-Snackbar.git
 
 You can rewrite all style by set prop wrapClass. the css file content maybe like:
-
-```css
-  .wrapClass {
+```scss
+  .[wrapClass] {
     ...
-  }
-  
-  .wrapClass .snack-bar {
-    ...
+    
+    .snack-bar {
+      ...
+    }
   }
 ```
 
