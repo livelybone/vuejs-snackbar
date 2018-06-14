@@ -1,5 +1,5 @@
 <template>
-    <div :class="wrapClass" :style="wrapClass?'':style.wrap">
+    <div class="snack-bar-wrap" :class="wrapClass" :style="wrapClass?'':style.wrap">
         <div v-for="(msg,i) in msgs"
              class="snack-bar"
              :style="wrapClass?'':style.bar(msg.color)"
@@ -54,25 +54,35 @@
     },
     methods: {
       info(msg) {
+        this.validator(msg);
         this.color = this.colors.info;
         this.open({color: this.color, msg: msg})
       },
       error(msg) {
+        this.validator(msg);
         this.color = this.colors.error;
         this.open({color: this.color, msg: msg});
         return false;
       },
       warn(msg) {
+        this.validator(msg);
         this.color = this.colors.warn;
         this.open({color: this.color, msg: msg});
       },
       open(msg) {
-        if (this.multiple) this.msgs.push(msg);
-        else this.msgs = [msg];
+        this.validator(msg);
+        const msgObj = typeof msg === 'string' ? {color: this.colors.open, msg} : msg;
+        if (this.multiple) this.msgs.push(msgObj);
+        else this.msgs = [msgObj];
         setTimeout(() => this.pop(), parseInt(this.holdTime));
       },
       pop() {
         this.msgs.splice(0, 1)
+      },
+      validator(msg) {
+        if (typeof msg !== 'string' && typeof msg.message !== 'string' && !(msg.toString instanceof Function)) {
+          throw new Error('Parameter msg is invalid. Expected a String, an Object with property toString[type:Function], or an Object with property message[type:String].')
+        }
       },
       getMsg(msg) {
         if (typeof msg === 'string') return msg;
@@ -110,8 +120,8 @@
           })
         }
       },
-      c(f, baseSize){
-         return `calc(${f} * ${baseSize})`
+      c(f, baseSize) {
+        return `calc(${f} * ${baseSize})`
       }
     }
   }
