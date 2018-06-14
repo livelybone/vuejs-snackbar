@@ -1,7 +1,7 @@
 # vuejs-snackbar
 A Vuejs snackbar component. Used flex layout. Repository: https://github.com/livelybone/Vue-Snackbar.git
 
-You can rewrite all style by set prop wrapClass. the css file content maybe like:
+You can rewrite all style by set prop `wrapClass`. the css file content maybe like:
 ```scss
   .[wrapClass] {
     ...
@@ -13,13 +13,11 @@ You can rewrite all style by set prop wrapClass. the css file content maybe like
 ```
 
 ## Installation
-
 ```bash
-npm install vuejs-snackbar
+npm install vuejs-snackbar --save-dev
 ```
 
 ## Register the component
-
 ```javascript
 import Snackbar from 'vuejs-snackbar';
 
@@ -55,18 +53,16 @@ export default{
 ```
 
 ## Props
-
-| Name          | Type           | Description  |
-| ------------- | -------------- | ------------ |
-| `baseSize`    | `String`       | Validator: /\d(rem&#124;px&#124;em)$/, default: '100px'. Used to set size of snackbar |
-| `wrapClass`   | `String`       | Default: ''. Used to set the wrap class of snackbar. When it Used, the prop 'baseSize' will be ignored, and you must rewrite all the style of snackbar |
-| `colors`      | `Object`       | Default: "{open: '#333',info: '#3DBD7D',error: '#FA7377',warn: '#FF6600'}". Used to set the background color of snackbar with different type |
-| `holdTime`    | `Number`       | Default: 3000. Used to set hold time of snackbar |
-| `multiple`    | `Boolean`      | Default: true. Used to set if it show multiple snackbar or not |
+| Name          | Type(Validator)                           | DefaultValue                                                          | Description  |
+| ------------- | ----------------------------------------- | --------------------------------------------------------------------  | ------------ |
+| `baseSize`    | `String` (/\d(rem&#124;px&#124;em)$/)   | `100px`                                                               | Used to set size of snackbar |
+| `wrapClass`   | `String`                                  | none                                                                  | Used to set the wrap class of snackbar. When it Used, the prop 'baseSize' will be ignored, and you must rewrite all the style of snackbar |
+| `colors`      | `Object`                                  | `{open: '#333',info: '#3DBD7D',error: '#FA7377',warn: '#FF6600'}`     | Used to set the background color of snackbar with different type |
+| `holdTime`    | `Number`                                  | `3000`                                                                | Used to set hold time of snackbar |
+| `multiple`    | `Boolean`                                 | `true`                                                                | Used to set if it show multiple snackbar or not |
 
 ## method
-
-| Name          | parameter  |
+| Name          | Parameter  |
 | ------------- | ------------ |
 | `open`        | msg --> [String, Object]. when it is an Object, it must be an Object with property toString`Function]`, or with property message`String`. |
 | `info`        | msg |
