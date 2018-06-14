@@ -49,7 +49,8 @@ export default{
     this.$refs.snackbar.error('msg');
     this.$refs.snackbar.warn('msg');
     this.$refs.snackbar.open('msg');
-  }
+  },
+  components:{Snackbar}  // Local register
 }
 ```
 
