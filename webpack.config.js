@@ -7,8 +7,6 @@ const config = {
     output: {
       path: path.resolve(__dirname, './build'),
       filename: './[name].js',
-      library: 'VueSnackbar',
-      libraryTarget: 'umd'
     },
     module: {
       rules: [
