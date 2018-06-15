@@ -1,7 +1,7 @@
 {
   "name": "vuejs-snackbar",
-  "version": "2.2.0",
-  "description": "A vuejs snackbar componenty",
+  "version": "2.3.0",
+  "description": "A vuejs snackbar component, supported SSR",
   "main": "./build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/livelybone/Vue-Snackbar#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
     "vue-loader": "^15.2.4",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.12.0",

@@ -1,5 +1,7 @@
 # vuejs-snackbar
-A Vuejs snackbar component, can be used to SSR. Used flex layout.. Repository: https://github.com/livelybone/Vue-Snackbar.git
+A Vuejs snackbar component, supported SSR. Used flex layout.
+
+Repository: https://github.com/livelybone/Vue-Snackbar.git
 
 You can rewrite all style by set prop `wrapClass`. the css file content maybe like:
 ```scss
