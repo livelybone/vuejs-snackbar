@@ -1,6 +1,6 @@
 {
   "name": "vuejs-snackbar",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "A vuejs snackbar component, supported SSR",
   "main": "./build/index.js",
   "scripts": {

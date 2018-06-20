@@ -52,41 +52,49 @@ export default {
   },
   methods: {
     info(msg) {
-      this.validator(msg);
+      const m = this.validator(msg);
       const color = this.colors.info;
-      this.open({ color, msg }, true);
+      this.open({ color, msg: m }, true);
     },
     error(msg) {
-      this.validator(msg);
+      const m = this.validator(msg);
       const color = this.colors.error;
-      this.open({ color, msg }, true);
+      this.open({ color, msg: m }, true);
       return false;
     },
     warn(msg) {
-      this.validator(msg);
+      const m = this.validator(msg);
       const color = this.colors.warn;
-      this.open({ color, msg }, true);
+      this.open({ color, msg: m }, true);
     },
     open(msg, inner = false) {
-      this.validator(msg);
-      const timer = setTimeout(() => this.pop(), parseInt(this.holdTime, 10));
-      const msgObj = inner ? { ...msg, timer } : { color: this.colors.open, msg, timer };
-      if (this.multiple) this.msgs.push(msgObj);
-      else this.msgs = [msgObj];
+      const m = !inner ? this.validator(msg) : msg;
+      const timer = setTimeout(() => this.pop(), this.holdTime);
+      const msgObj = inner ? { ...m, timer } : { color: this.colors.open, msg: m, timer };
+      if (this.multiple) {
+        this.msgs.push(msgObj);
+      } else {
+        if (this.msgs[0]) {
+          clearTimeout(this.msgs[0].timer);
+        }
+        this.msgs = [msgObj];
+      }
     },
     pop(i = 0) {
-      clearTimeout(this.msgs[i].timer);
+      if (this.msgs[i].timer) {
+        clearTimeout(this.msgs[i].timer);
+      }
       this.msgs.splice(i, 1);
     },
     validator(msg) {
-      if (typeof msg !== 'string' && typeof msg.message !== 'string' && !(msg.toString instanceof Function)) {
-        throw new Error('Parameter msg is invalid. Expected a String, an Object with property toString[type:Function], or an Object with property message[type:String].');
+      if (typeof msg !== 'string' && typeof msg.message !== 'string') {
+        return 'Parameter msg is invalid. Expected a String, or an Object with property message[type:String].';
       }
+      return msg;
     },
     getMsg(msg) {
       if (typeof msg === 'string') return msg;
-      if (msg.message && typeof msg.message === 'string') return msg.message;
-      return '';
+      return msg.message;
     },
     getStyle(baseSize = '100px') {
       return {
