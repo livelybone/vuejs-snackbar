@@ -2,6 +2,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const path = require('path');
 
 const config = {
+  mode: 'production',
   entry: { index: './index.js' },
   output: {
     path: path.resolve(__dirname, './build'),
@@ -17,7 +18,14 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: { presets: ['env'] },
+        options: {
+          presets: ['env'],
+          env: {
+            test: {
+              plugins: ['istanbul'],
+            },
+          },
+        },
       },
     ],
   },

@@ -1,1 +1,1 @@
-module.exports = require('./src/index.vue').default;
+module.exports = require('./src/Snackbar.vue').default;

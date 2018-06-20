@@ -4,13 +4,14 @@
          :key="i"
          class="snack-bar"
          :style="wrapClass?'':style.bar(msg.color)"
-         @click="pop"
+         @click="pop(i)"
          v-html="getMsg(msg.msg)">
     </div>
   </div>
 </template>
 
-<script>export default {
+<script>
+export default {
   name: 'SnackBar',
   props: {
     colors: {
@@ -53,28 +54,29 @@
     info(msg) {
       this.validator(msg);
       const color = this.colors.info;
-      this.open({ color, msg });
+      this.open({ color, msg }, true);
     },
     error(msg) {
       this.validator(msg);
       const color = this.colors.error;
-      this.open({ color, msg });
+      this.open({ color, msg }, true);
       return false;
     },
     warn(msg) {
       this.validator(msg);
       const color = this.colors.warn;
-      this.open({ color, msg });
+      this.open({ color, msg }, true);
     },
-    open(msg) {
+    open(msg, inner = false) {
       this.validator(msg);
-      const msgObj = typeof msg === 'string' ? { color: this.colors.open, msg } : msg;
+      const timer = setTimeout(() => this.pop(), parseInt(this.holdTime, 10));
+      const msgObj = inner ? { ...msg, timer } : { color: this.colors.open, msg, timer };
       if (this.multiple) this.msgs.push(msgObj);
       else this.msgs = [msgObj];
-      setTimeout(() => this.pop(), parseInt(this.holdTime, 10));
     },
-    pop() {
-      this.msgs.splice(0, 1);
+    pop(i = 0) {
+      clearTimeout(this.msgs[i].timer);
+      this.msgs.splice(i, 1);
     },
     validator(msg) {
       if (typeof msg !== 'string' && typeof msg.message !== 'string' && !(msg.toString instanceof Function)) {
