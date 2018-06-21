@@ -3,7 +3,7 @@ const path = require('path');
 
 const config = {
   mode: 'production',
-  entry: { index: './index.js' },
+  entry: { index: './src/index.js' },
   output: {
     path: path.resolve(__dirname, './lib'),
     filename: './[name].js',
@@ -19,7 +19,7 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['env'],
+          presets: ['env', 'stage-2'],
           env: {
             test: {
               plugins: ['istanbul'],

@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Snackbar from '../src/Snackbar.vue';
+import Snackbar from '../src/component/Snackbar.vue';
 
 describe('Snackbar.vue', () => {
   it('Rendered div.snack-bar-wrap element', () => {
