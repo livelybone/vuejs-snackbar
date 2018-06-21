@@ -1,4 +1,4 @@
-# <img src="https://img.shields.io/badge/vuejs--snackbar-static-blue.svg" height="50">
+# vuejs-snackbar <img src="https://img.shields.io/badge/vuejs--snackbar-static-blue.svg">
 
 A Vuejs snackbar component, supported SSR. Used flex layout.
 
