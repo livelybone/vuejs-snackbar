@@ -1,7 +1,8 @@
-# vuejs-snackbar
+# <img src="https://img.shields.io/badge/vuejs--snackbar-static-blue.svg" height="50">
+
 A Vuejs snackbar component, supported SSR. Used flex layout.
 
-Repository: https://github.com/livelybone/Vue-Snackbar.git
+Repository: https://github.com/livelybone/vuejs-snackbar.git
 
 You can rewrite all style by set prop `wrapClass`. the css file content maybe like:
 ```scss
