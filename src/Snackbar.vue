@@ -35,9 +35,8 @@ export default {
     },
     wrapClass: String,
     baseSize: {
-      validator(val) {
-        return val === undefined || (typeof val === 'string' && /\d(rem|px|em)$/.test(val));
-      },
+      default: '100px',
+      type: String,
     },
   },
   data() {
@@ -81,9 +80,7 @@ export default {
       }
     },
     pop(i = 0) {
-      if (this.msgs[i].timer) {
-        clearTimeout(this.msgs[i].timer);
-      }
+      clearTimeout(this.msgs[i].timer);
       this.msgs.splice(i, 1);
     },
     validator(msg) {
@@ -96,8 +93,9 @@ export default {
       if (typeof msg === 'string') return msg;
       return msg.message;
     },
-    getStyle(baseSize = '100px') {
-      return {
+    getStyle(baseSize) {
+      const valid = /\d(rem|px|em)$/.test(baseSize);
+      return valid ? {
         wrap: {
           display: 'flex',
           alignItems: 'center',
@@ -126,7 +124,7 @@ export default {
           boxShadow: `0 ${this.c(0.01, baseSize)} ${this.c(0.025, baseSize)} rgba(0,0,0, .15)`,
           cursor: 'pointer',
         }),
-      };
+      } : {};
     },
     c(f, baseSize) {
       return `calc(${f} * ${baseSize})`;

@@ -1,8 +1,8 @@
 {
   "name": "vuejs-snackbar",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "A vuejs snackbar component, supported SSR",
-  "main": "./build/index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack  --progress --mode production",
     "eslint": "./node_modules/.bin/eslint ./src/index.vue",

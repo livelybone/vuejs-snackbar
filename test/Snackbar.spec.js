@@ -88,13 +88,21 @@ describe('Snackbar.vue', () => {
 
   it('There will no style when set prop wrapClass', () => {
     const wrapper = shallowMount(Snackbar);
-    wrapper.setProps({ wrapClass: 'wrap' });
+    const wrapClass = 'wrap-1';
+    wrapper.setProps({ wrapClass });
     expect(wrapper.find('.snack-bar-wrap').element.getAttribute('style')).to.equal('');
+    expect(wrapper.find('.snack-bar-wrap').element.getAttribute('class')).to.includes(wrapClass);
   });
 
-  it('Right style when set prop baseSize', () => {
+  it('Right style when set right prop baseSize', () => {
     const wrapper = shallowMount(Snackbar);
     wrapper.setProps({ baseSize: '1rem' });
     expect(wrapper.find('.snack-bar-wrap').element.style.top).to.equal('calc(0.05rem)');
+  });
+
+  it('Incorrect style when set Incorrect prop baseSize', () => {
+    const wrapper = shallowMount(Snackbar);
+    wrapper.setProps({ baseSize: '110a' });
+    expect(wrapper.find('.snack-bar-wrap').element.getAttribute('style')).to.equal('');
   });
 });

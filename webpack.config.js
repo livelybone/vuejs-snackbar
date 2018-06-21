@@ -5,7 +5,7 @@ const config = {
   mode: 'production',
   entry: { index: './index.js' },
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './lib'),
     filename: './[name].js',
     library: 'VueSnackbar',
     libraryTarget: 'umd',

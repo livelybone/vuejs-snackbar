@@ -16,3 +16,8 @@ yarn-error.log*
 webpack.*.js
 /src/
 /index.js
+
+test/
+coverage/
+/karma.conf.js
+/.eslintrc.js
