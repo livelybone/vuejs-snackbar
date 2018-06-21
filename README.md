@@ -56,9 +56,9 @@ export default{
 ```
 
 ## Props
-| Name          | Type(Validator)                           | DefaultValue                                                          | Description  |
+| Name          | Type                                      | DefaultValue                                                          | Description  |
 | ------------- | ----------------------------------------- | --------------------------------------------------------------------  | ------------ |
-| `baseSize`    | `String` (/\d(rem&#124;px&#124;em)$/)   | `100px`                                                               | Used to set size of snackbar |
+| `baseSize`    | `String`                                  | `100px`                                                               | Used to set size of snackbar. Tested by reg: /\d(rem&#124;px&#124;em)$/ |
 | `wrapClass`   | `String`                                  | none                                                                  | Used to set the wrap class of snackbar. When it Used, the prop 'baseSize' will be ignored, and you must rewrite all the style of snackbar |
 | `colors`      | `Object`                                  | `{open: '#333',info: '#3DBD7D',error: '#FA7377',warn: '#FF6600'}`     | Used to set the background color of snackbar with different type |
 | `holdTime`    | `Number`                                  | `3000`                                                                | Used to set hold time of snackbar |
