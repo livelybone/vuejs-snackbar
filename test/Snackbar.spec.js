@@ -31,37 +31,22 @@ describe('Snackbar.vue', () => {
   it('Rendered div.snack-bar element when called info function of Snackbar component', () => {
     const wrapper = shallowMount(Snackbar);
     const msg = "this is an 'info' msg";
-    wrapper.setProps({ multiple: false });
     wrapper.vm.info(msg);
     expect(wrapper.find('.snack-bar').text()).to.equal(msg);
-    wrapper.vm.info({ message: msg });
-    expect(wrapper.find('.snack-bar').text()).to.equal(msg);
-    wrapper.vm.info({ a: 'sdf' });
-    expect(wrapper.find('.snack-bar').text()).to.includes('Parameter msg is invalid');
   });
 
   it('Rendered div.snack-bar element when called warn function of Snackbar component', () => {
     const wrapper = shallowMount(Snackbar);
     const msg = "this is an 'warn' msg";
-    wrapper.setProps({ multiple: false });
     wrapper.vm.warn(msg);
     expect(wrapper.find('.snack-bar').text()).to.equal(msg);
-    wrapper.vm.warn({ message: msg });
-    expect(wrapper.find('.snack-bar').text()).to.equal(msg);
-    wrapper.vm.warn({ a: 'sdf' });
-    expect(wrapper.find('.snack-bar').text()).to.includes('Parameter msg is invalid');
   });
 
   it('Rendered div.snack-bar element when called error function of Snackbar component', () => {
     const wrapper = shallowMount(Snackbar);
     const msg = "this is an 'error' msg";
-    wrapper.setProps({ multiple: false });
     wrapper.vm.error(msg);
     expect(wrapper.find('.snack-bar').text()).to.equal(msg);
-    wrapper.vm.error({ message: msg });
-    expect(wrapper.find('.snack-bar').text()).to.equal(msg);
-    wrapper.vm.error({ a: 'sdf' });
-    expect(wrapper.find('.snack-bar').text()).to.includes('Parameter msg is invalid');
   });
 
   it('Div.snack-bar element will be destroyed when click it', () => {
