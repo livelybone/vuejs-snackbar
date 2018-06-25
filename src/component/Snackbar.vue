@@ -100,6 +100,7 @@ export default {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          flexDirection: 'column',
           flexWrap: 'wrap',
           position: 'fixed',
           left: '50%',

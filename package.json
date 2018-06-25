@@ -1,6 +1,6 @@
 {
   "name": "vuejs-snackbar",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "description": "A vuejs snackbar component, supported SSR",
   "main": "./lib/index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/livelybone/Vue-Snackbar/issues"
   },
-  "homepage": "https://github.com/livelybone/Vue-Snackbar#readme",
+  "homepage": "https://livelybone.github.io/src/vuejs-snackbar",
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.19",
     "babel-core": "^6.26.3",
