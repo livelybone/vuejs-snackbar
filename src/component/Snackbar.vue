@@ -105,7 +105,9 @@ export default {
           left: '50%',
           top: this.c('.05', baseSize),
           zIndex: 1000,
-          width: 0,
+          width: '100%',
+          margin: '0 0 0 -50%',
+          pointerEvents: 'none',
         },
         bar: bg => ({
           display: 'flex',
@@ -123,6 +125,7 @@ export default {
           background: bg,
           boxShadow: `0 ${this.c(0.01, baseSize)} ${this.c(0.025, baseSize)} rgba(0,0,0, .15)`,
           cursor: 'pointer',
+          pointerEvents: 'all',
         }),
       } : {};
     },
