@@ -111,14 +111,10 @@ export default {
           pointerEvents: 'none',
         },
         bar: bg => ({
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           width: 'auto',
           minWidth: baseSize,
           maxWidth: `calc(100vw - 0.4 * ${baseSize})`,
-          minHeight: this.c(0.5, baseSize),
-          padding: `${this.c(0.1, baseSize)} ${this.c(0.2, baseSize)}`,
+          padding: `${this.c(0.15, baseSize)} ${this.c(0.2, baseSize)}`,
           margin: `0 0 ${this.c(0.05, baseSize)}`,
           borderRadius: this.c(0.02, baseSize),
           lineHeight: this.c(0.2, baseSize),
@@ -126,6 +122,7 @@ export default {
           background: bg,
           boxShadow: `0 ${this.c(0.01, baseSize)} ${this.c(0.025, baseSize)} rgba(0,0,0, .15)`,
           cursor: 'pointer',
+          textAlign: 'center',
           pointerEvents: 'all',
         }),
       } : {};
