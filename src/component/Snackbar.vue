@@ -1,12 +1,14 @@
 <template>
   <div class="snack-bar-wrap" :class="wrapClass" :style="wrapClass?'':style.wrap">
-    <div v-for="(msg,i) in msgs"
-         :key="i"
-         class="snack-bar"
-         :style="wrapClass?'':style.bar(msg.color)"
-         @click="pop(i)"
-         v-html="getMsg(msg.msg)">
-    </div>
+    <template v-for="(msg,i) in msgs">
+      <div :key="i"
+           class="snack-bar"
+           :style="wrapClass?'':style.bar(msg.color)"
+           @click="pop(i)"
+           v-html="getMsg(msg.msg)">
+      </div>
+      <br :key="i+'1'">
+    </template>
   </div>
 </template>
 
@@ -97,20 +99,16 @@ export default {
       const valid = /\d(rem|px|em)$/.test(baseSize);
       return valid ? {
         wrap: {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          flexWrap: 'wrap',
           position: 'fixed',
-          left: '50%',
+          left: 0,
           top: this.c('.05', baseSize),
           zIndex: 1000,
           width: '100%',
-          margin: '0 0 0 -50%',
           pointerEvents: 'none',
+          textAlign: 'center',
         },
         bar: bg => ({
+          display: 'inline-block',
           width: 'auto',
           minWidth: baseSize,
           maxWidth: `calc(100vw - 0.4 * ${baseSize})`,
