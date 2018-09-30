@@ -1,4 +1,10 @@
-# vuejs-snackbar <img src="https://img.shields.io/badge/vuejs--snackbar-static-blue.svg">
+# vuejs-snackbar 
+[![NPM Version](http://img.shields.io/npm/v/@livelybone/vuejs-snackbar.svg?style=flat-square)](https://www.npmjs.com/package/@livelybone/vuejs-snackbar)
+[![Download Month](http://img.shields.io/npm/dm/@livelybone/vuejs-snackbar.svg?style=flat-square)](https://www.npmjs.com/package/@livelybone/vuejs-snackbar)
+![gzip with dependencies: 1.3kb](https://img.shields.io/badge/gzip--with--dependencies-1.3kb-brightgreen.svg "gzip with dependencies: 1.3kb")
+![pkg.module](https://img.shields.io/badge/pkg.module-supported-blue.svg "pkg.module")
+
+> `pkg.module supported`, which means that you can apply tree-shaking in you project
 
 A Vuejs snackbar component, supported SSR. Used flex layout.
 

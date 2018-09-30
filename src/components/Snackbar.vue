@@ -122,6 +122,7 @@ export default {
           cursor: 'pointer',
           textAlign: 'center',
           pointerEvents: 'all',
+          userSelect: 'none',
         }),
       } : {}
     },

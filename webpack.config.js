@@ -3,7 +3,7 @@ const path = require('path');
 
 const config = {
   mode: 'production',
-  entry: { index: './src/index.js' },
+  entry: { index: './src/components/Snackbar.vue' },
   output: {
     path: path.resolve(__dirname, './lib'),
     filename: './[name].js',

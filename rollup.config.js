@@ -23,7 +23,7 @@ const conf = entry => Object.assign({}, baseConf, {
   output: entry.formats.map(format => ({
     file: `./lib/${format}/${entry.name}.js`,
     format,
-    name: entry.name === 'index' ? 'VueSnackbar' : entry.name,
+    name: 'VueSnackbar',
   })),
   external: [],
   plugins: Object.assign(
@@ -34,7 +34,6 @@ const conf = entry => Object.assign({}, baseConf, {
 })
 
 export default [
-  { name: 'index', filename: './src/index.js', formats: ['es'], needUglify: false },
-  { name: 'index', filename: './src/index.js', formats: ['umd'] },
-  ...getEntries(),
+  { name: 'index', filename: './src/components/Snackbar.vue', formats: ['es'], needUglify: false },
+  { name: 'index', filename: './src/components/Snackbar.vue', formats: ['umd'] },
 ].map(conf)

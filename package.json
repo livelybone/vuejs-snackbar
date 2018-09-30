@@ -1,6 +1,6 @@
 {
   "name": "vuejs-snackbar",
-  "version": "3.0.0-beta0",
+  "version": "3.0.0",
   "description": "A vuejs snackbar component, supported SSR",
   "main": "./lib/umd/index.js",
   "module": "./lib/es/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/livelybone/Vue-Snackbar.git"
+    "url": "git+https://github.com/livelybone/vuejs-snackbar.git"
   },
   "keywords": [
     "vue",
@@ -21,7 +21,7 @@
   "author": "livelybone",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/livelybone/Vue-Snackbar/issues"
+    "url": "https://github.com/livelybone/vuejs-snackbar/issues"
   },
   "homepage": "https://livelybone.github.io/src/vuejs-snackbar",
   "devDependencies": {
