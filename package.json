@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/livelybone/vuejs-snackbar/issues"
   },
-  "homepage": "https://livelybone.github.io/src/vuejs-snackbar",
+  "homepage": "https://livelybone.github.io/vue/vuejs-snackbar",
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.19",
     "babel-core": "^6.26.3",

@@ -1,6 +1,6 @@
 # vuejs-snackbar 
-[![NPM Version](http://img.shields.io/npm/v/@livelybone/vuejs-snackbar.svg?style=flat-square)](https://www.npmjs.com/package/@livelybone/vuejs-snackbar)
-[![Download Month](http://img.shields.io/npm/dm/@livelybone/vuejs-snackbar.svg?style=flat-square)](https://www.npmjs.com/package/@livelybone/vuejs-snackbar)
+[![NPM Version](http://img.shields.io/npm/v/vuejs-snackbar.svg?style=flat-square)](https://www.npmjs.com/package/vuejs-snackbar)
+[![Download Month](http://img.shields.io/npm/dm/vuejs-snackbar.svg?style=flat-square)](https://www.npmjs.com/package/vuejs-snackbar)
 ![gzip with dependencies: 1.3kb](https://img.shields.io/badge/gzip--with--dependencies-1.3kb-brightgreen.svg "gzip with dependencies: 1.3kb")
 ![pkg.module](https://img.shields.io/badge/pkg.module-supported-blue.svg "pkg.module")
 
