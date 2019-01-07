@@ -22,7 +22,7 @@ You can rewrite all style by set prop `wrapClass`. the css file content maybe li
 ```
 
 ## Demo
-https://livelybone.github.io/vue/vuejs-snackbar
+https://livelybone.github.io/vue/vuejs-snackbar/
 
 ## Installation
 ```bash
