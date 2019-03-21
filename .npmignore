@@ -13,11 +13,17 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-webpack.*.js
 /src/
-/index.js
+/examples/
+/test/
+/coverage/
+/dist/
+/node_modules/
 
-test/
-coverage/
 /karma.conf.js
 /.eslintrc.js
+/.eslintignore
+/webpack.*.js
+/rollup.*.js
+/package-lock.json
+/yarn.lock

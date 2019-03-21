@@ -1,14 +1,16 @@
 {
   "name": "vuejs-snackbar",
-  "version": "3.1.1",
-  "description": "A vuejs snackbar component, supported SSR",
+  "version": "4.0.0",
+  "description": "A Vuejs snackbar component, supported SSR, compatible with IE",
   "main": "./lib/umd/index.js",
   "module": "./lib/es/index.js",
   "unpkg": "./lib/umd/index.js",
   "scripts": {
     "build": "rimraf ./lib && rollup -c",
     "eslint": "./node_modules/.bin/eslint ./src/index.vue",
-    "test": "cross-env BABEL_ENV=test karma start --single-run"
+    "test": "cross-env BABEL_ENV=test karma start --single-run",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,8 @@
   },
   "keywords": [
     "vue",
-    "snackbar"
+    "snackbar",
+    "IE"
   ],
   "author": "livelybone(2631541504@qq.com)",
   "license": "MIT",
@@ -31,10 +34,14 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-istanbul": "^4.1.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.2",
+    "commitizen": "^3.0.7",
+    "conventional-changelog-cli": "^2.0.12",
     "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
@@ -49,10 +56,10 @@
     "karma-spec-reporter": "0.0.32",
     "karma-webpack": "^3.0.0",
     "mocha": "^5.2.0",
-    "rollup": "^0.65.0",
+    "rollup": "^1.7.0",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.6",
-    "rollup-plugin-license": "^0.7.0",
+    "rollup-plugin-license": "^0.8.1",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-uglify": "^5.0.2",
     "rollup-plugin-vue": "^4.3.2",
@@ -61,5 +68,10 @@
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.12.0",
     "webpack-command": "^0.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

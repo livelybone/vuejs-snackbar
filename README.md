@@ -6,7 +6,7 @@
 
 > `pkg.module supported`, which means that you can apply tree-shaking in you project
 
-A Vuejs snackbar component, supported SSR. Used flex layout.
+A Vuejs snackbar component, supported SSR, compatible with IE
 
 Repository: https://github.com/livelybone/vuejs-snackbar.git
 
@@ -72,6 +72,7 @@ export default{
 | `colors`      | `Object`                                  | `{open: '#333',info: '#3DBD7D',error: '#FA7377',warn: '#FF6600'}`     | Used to set the background color of snackbar with different type |
 | `holdTime`    | `Number`                                  | `3000`                                                                | Used to set hold time of snackbar |
 | `multiple`    | `Boolean`                                 | `true`                                                                | Used to set if it show multiple snackbar or not |
+| `position`    | `String`                                  | `top-center`                                                          | Used to set the position of the wrap |
 
 ## method
 | Name          | Parameter  |

@@ -1,5 +1,5 @@
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const path = require('path')
 
 const config = {
   mode: 'production',
@@ -22,7 +22,7 @@ const config = {
           presets: ['env', 'stage-2'],
           env: {
             test: {
-              plugins: ['istanbul'],
+              plugins: ['transform-runtime', 'istanbul'],
             },
           },
         },
@@ -32,5 +32,5 @@ const config = {
   plugins: [
     new VueLoaderPlugin(),
   ],
-};
-module.exports = config;
+}
+module.exports = config

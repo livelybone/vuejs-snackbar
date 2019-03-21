@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VueBtn</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/@livelybone/vue-loading"></script>
+  <script src="https://unpkg.com/promise-polyfill"></script>
+  <script src="../lib/umd/index.js"></script>
+  <style>
+  .vue-btn {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    background: #5a94b4;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .vue-btn:hover {
+    background: #64a2c3;
+  }
+
+  .vue-btn:active {
+    background: #3f6b83;
+  }
+
+  .vue-btn[disabled] {
+    background: #a8b5c2;
+  }
+
+  .loading {
+    margin: 10px 0 0;
+  }
+  </style>
+</head>
+<body>
+<div id="module"></div>
+
+<script>
+new Vue({
+  el: '#module',
+  template: '<div>' +
+  '<snackbar ref="snackbar" :multiple="false" position="bottom-left"/>' +
+  '<button @click="click($event, \'open\')">Trigger open function</button>' +
+  '<button @click="click($event, \'info\')">Trigger info function</button>' +
+  '<button @click="click($event, \'warn\')">Trigger warn function</button>' +
+  '<button @click="click($event, \'error\')">Trigger error function</button>' +
+  '</div>',
+  data: function () {
+    return {}
+  },
+  methods: {
+    click(ev, type) {
+      this.$refs.snackbar[type](ev.target.innerText)
+    }
+  },
+  components: { 'snackbar': VueSnackbar }
+})
+</script>
+</body>
+</html>
